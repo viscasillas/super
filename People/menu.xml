@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleMenu>
+	<menuItem>
+		<name>Users</name>
+		<location>users</location>
+	</menuItem>
+	<menuItem>
+		<name>Add User</name>
+		<location>add</location>
+	</menuItem>
+</moduleMenu>

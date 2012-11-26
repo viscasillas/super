@@ -1,0 +1,86 @@
+/* CSS Document */
+
+/* CKEDITOR */
+.cke_focus { outline:0 !important; }
+/* for use with super.pages/pages.php */
+.fileList {
+
+}
+.fileList:hover {
+	background-color:#EEE;
+	color:#0099FF;
+}
+/* ends */
+/* For use with super.pages/edit.php*/
+#savingsuccess {
+	position: fixed;
+	top:5px;
+	left: 200px;
+	color:#FFF;
+	font-family: arial;
+	font-style: italic;
+	font-size: 30px;
+	z-index: 50;
+	width:200px;
+}
+.editorTools {
+	position: fixed;
+	top:65px;
+	left:175px;
+}
+/* ends */
+.jumper {
+	position:fixed;
+	width:100%;
+	height:100%;
+	left:143px;
+	z-index:20;
+	top:45px;
+	color:#0099FF;
+	overflow:auto;
+	padding:30px;
+}
+body {
+	background-color: #FFF;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+h3 {
+	font-family:arial;
+	font-size:14px;
+	font-style:italic;
+	padding-left:10px;
+}
+a.mod, a.mod:visited, a.mod:active {
+	color:#0099FF;
+	font-family:arial;
+	font-size:14px;
+	font-style:italic;
+	padding-left:15px;
+	text-decoration:none;
+}
+a.mod:hover {
+	color:black;
+}
+.xPanel_toolbar {
+	background-color:#333333;
+	height:46px;
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+}
+.xPanel_menuList {
+	width: 143px;
+	height: 46px;
+	z-index: 10;
+	overflow: hidden;
+	height: 1000px;
+	background-image:url(img/xp_menuBg.png);
+}
+

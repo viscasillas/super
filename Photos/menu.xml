@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleMenu>
+	<menuItem>
+		<name>Thumbs</name>
+		<location>thumbs</location>
+	</menuItem>
+	<menuItem>
+		<name>List</name>
+		<location>list</location>
+	</menuItem>
+	<menuItem>
+		<name>Upload</name>
+		<location>upload</location>
+	</menuItem>
+	<menuItem>
+		<name>ReThumb</name>
+		<location>thumber</location>
+	</menuItem>
+	<menuItem>
+		<name>Purge</name>
+		<location>purge</location>
+	</menuItem>
+</moduleMenu>

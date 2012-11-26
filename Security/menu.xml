@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleMenu>
+	<menuItem>
+		<name>Logout</name>
+		<location>logout</location>
+	</menuItem>
+	<menuItem>
+		<name>Password</name>
+		<location>changepassword</location>
+	</menuItem>
+</moduleMenu>

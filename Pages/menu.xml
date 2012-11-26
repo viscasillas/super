@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduleMenu>
+	<menuItem>
+		<name>Create Page</name>
+		<location>create</location>
+	</menuItem>
+	<menuItem>
+		<name>Pages</name>
+		<location>pages</location>
+	</menuItem>
+</moduleMenu>
