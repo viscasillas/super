@@ -11,7 +11,7 @@
 $siteURL = "http://localhost/super/";
 
 // Theme
-$siteTheme = "default";
+$siteTheme = "hello";
 
 // Title
 $siteTitle = "My Super: Site!";

@@ -14,6 +14,6 @@ else
     echo "An error has occurred. Please try again later.";
 }
 
-		//header('Location: ../admin.php?mod=Photos/thumber');
-		//die;
+header('Location: ../admin.php?mod=Photos/thumber');
+die;
 ?>
