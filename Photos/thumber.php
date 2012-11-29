@@ -2,7 +2,21 @@
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Creating Thumnails for all Images.</span><br><br>
 <?php
 /*
- Generate thumbnails from current images folder to the thumbs folder.
+	This is the PHP code for the How to Create Thumbnail Images using PHP Tutorial
+
+	This script creates all of the thumbnail images and the gallery.html page.
+
+	Note: Make sure that PHP has permission to read and write 
+	to the directory in which .jpg files are stored and the directory 
+	in which you're trying to create thumbnails.	
+	
+	You may use this code in your own projects as long as this 
+	copyright is left in place.  All code is provided AS-IS.
+	This code is distributed in the hope that it will be useful,
+ 	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+	
+	Copyright 2007 WebCheatSheet.com	
 */
 
 
@@ -44,15 +58,57 @@ function createThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
   closedir( $dir );
 }
 
+function createGallery( $pathToImages, $pathToThumbs ) 
+{
+  echo "Creating gallery.html <br />";
+
+  $output = "<html>";
+  $output .= "<head><title>Thumbnails</title></head>";
+  $output .= "<body>";
+  $output .= "<table cellspacing=\"0\" cellpadding=\"2\" width=\"500\">";
+  $output .= "<tr>";
+
+  // open the directory
+  $dir = opendir( $pathToThumbs );
+
+  $counter = 0;
+  // loop through the directory
+  while (false !== ($fname = readdir($dir)))
+  {
+    // strip the . and .. entries out
+    if ($fname != '.' && $fname != '..') 
+    {
+      $output .= "<td valign=\"middle\" align=\"center\"><a href=\"{$pathToImages}{$fname}\">";
+      $output .= "<img src=\"{$pathToThumbs}{$fname}\" border=\"0\" />";
+      $output .= "</a></td>";
+
+      $counter += 1;
+      if ( $counter % 4 == 0 ) { $output .= "</tr><tr>"; }
+    }
+  }
+  // close the directory
+  closedir( $dir );
+
+  $output .= "</tr>";
+  $output .= "</table>";
+  $output .= "</body>";
+  $output .= "</html>";
+
+  // open the file
+  $fhandle = fopen( "gallery.html", "w" );
+  // write the contents of the $output variable to the file
+  fwrite( $fhandle, $output ); 
+  // close the file
+  fclose( $fhandle );
+}
 
 // call createThumb function and pass to it as parameters the path 
 // to the directory that contains images, the path to the directory
 // in which thumbnails will be placed and the thumbnail's width. 
 // We are assuming that the path will be a relative path working 
 // both in the filesystem, and through the web for links
-
-
 createThumbs("Photos/images/","Photos/thumbs/",100);
+// header("Location: admin.php?mod=Photos/thumbs");
 header("refresh: 3; url=admin.php?mod=Photos/thumbs");
 ?>
 <html>
@@ -67,12 +123,11 @@ header("refresh: 3; url=admin.php?mod=Photos/thumbs");
 	top:46px;
 	left:0;
 	opacity:0.4;
-	filter:alpha(opacity=40);
+	filter:alpha(opacity=40); /* For IE8 and earlier */
 }
 </style>
 </head>
-<body>
-<br /><br />
+<body><br /><br />
 <small>Window will refresh in (3) seconds.</small>
 <div class="dimmer1">
 </div>

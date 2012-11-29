@@ -1,6 +1,6 @@
 <div id="blanket" style="display:none;" onclick="popup('popUpDiv')"></div>
 <div id="popUpDiv" style="display:none;">
-<?php include('System/plogin.php');?>
+<?php include('plogin.php');?>
 </div>
 
 <div class="mainContainer">
