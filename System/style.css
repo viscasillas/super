@@ -82,7 +82,7 @@ a.mod:hover {
 	z-index: 10;
 	overflow: hidden;
 	height: 1000px;
-	background-color:#333;
+	background-color:#fff;
 	background-image:url(img/newmenubg.png);
 }
 
@@ -98,6 +98,7 @@ a.mod:hover {
 	z-index:99999;
 	font-size:12px;
 	text-align:right;
+	cursor:default;
 }
 .xPanelAdminSettingsWidget {
 	padding-top:10px;

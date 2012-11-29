@@ -1,4 +1,10 @@
 <!-- Save to existing file-->
+<style type="text/css">
+
+.editableWithStaticLook:hover {
+	background-color: #FFC;
+}
+</style>
 <?php
 $page = $_POST['page'];
 
@@ -74,7 +80,7 @@ if(isset($_POST['overwrite'])){
 </script>
 <!-- Some integration calls -->
 <div class="editorTools">
-	<span style="font-family:arial;font-size:30px;color:#333;font-style:italic;" onClick="window.open('?mod=Pages/title&filename=<?php echo $docname;?>','_self');">&nbsp;<?php echo $titleOfDoc;?></span><br>
+	<span class="editableWithStaticLook" style="font-family:arial;font-size:30px;color:#333;font-style:italic;" onClick="window.open('?mod=Pages/title&filename=<?php echo $docname;?>','_self');">&nbsp;<?php echo $titleOfDoc;?></span><br />
 	<!--<a class="mod" target="preview" href="pg.php?v=<?php echo $docname;?>"><u><?php echo $docname;?>.xml</u></a>-->
 	<input type="text" disabled="disabled" value="<?php echo $siteURL."?p=".$docname;?>" style="margin-left:5px;width:400px;font-size:10px;">	
 </div>

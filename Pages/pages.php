@@ -10,6 +10,34 @@ a.renameLink:hover {
 	font-family:Arial, Helvetica, sans-serif;
 	cursor:default;
 }
+.specialBtn {
+	background-color: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	.specialBtn:hover {
+	background-color: #FA696C;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
 </style>
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span><br><br>
 <table width="600px" border="0">
@@ -49,7 +77,7 @@ a.renameLink:hover {
 				<td>
 				<form method="post" action="Pages/delete.php">
 					<input type="text" name="chosenFile" value="'.$xml->docname.'" style="display:none;">
-					<input type="submit" name="delete" value="Delete">
+					<input class="specialBtn" type="submit" name="delete" value="Delete">
 				</form>
 				<!--<form method="post" action="Pages/delete.php">
 					<input type="text" name="chosenFile" value="'.$xml->docname.'" style="display:none;">

@@ -74,7 +74,7 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
-<div class="xPanelStatusBar">super:.(v0.3)<small>by: <b>vivalavisca</b></small><br />build (000003)</div>
+<div class="xPanelStatusBar">super:.(v0.5)<small>by: <b>vivalavisca</b></small><br />build (000005)</div>
 <div class="xPanelAdminSettingsWidget">
   <div class="xPanelAdminSettingsWidget_link">
   	Administrator (<small><?php echo $_SESSION['username']; ?></small>)

@@ -12,6 +12,37 @@ if(isset($_POST['remove'])){
 	.userhover:hover {
 		cursor:default;
 	}
+	.editableWithStaticLook:hover {
+		background-color:#FFC;
+	}
+	.specialBtn {
+	background-color: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
+	.specialBtn:hover {
+	background-color: #FA696C;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	}
 	</style>
 </head>
 <body>
@@ -29,13 +60,13 @@ if(isset($_POST['remove'])){
 			$xml = new SimpleXMLElement($file, 0, true);
 			echo '
 			<tr class="fileList" style="text-align:left;">
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/username&username='. basename($file, '.xml') .'\',\'_self\');">'. basename($file, '.xml') .'</td>
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/email&username='. basename($file, '.xml') .'\',\'_self\');">'. $xml->email .'</td>
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/pw&username='. basename($file, '.xml') .'\',\'_self\');">'. $xml->password .'</td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/username&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. basename($file, '.xml') .'</span></td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/email&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->email .'</span></td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/pw&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->password .'</span></td>
 				<td>
 					<form method="post" action="">
 					<input type="text" name="deleteAccount" value="People/users/'. basename($file) .'" style="display:none;">
-					<input type="submit" name="remove" value="Delete">
+					<input class="specialBtn" type="submit" name="remove" value="Delete">
 					</form>
 				</td>
 			</tr>';
