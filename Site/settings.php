@@ -1,3 +1,5 @@
+
+
 <?php
 
 
@@ -53,15 +55,16 @@ echo "<div id='savingsuccess' style='display:block'>Saved!</div>
 				function closeHelpDiv(){
 				document.getElementById('savingsuccess').style.display=' none';
 				}</script>";
+header('Location: admin.php?mod=Site/settings','5');
 }
 
 
-?>
 
+?>
 <form action="" method="post" name="install" id="install">
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Sitewide Configuration</span><br>
   <p>
- siteURL
+ Site URL:
     <input name="siteURL" type="text" id="siteURL" value="<?php echo $siteURL;?>"> 
 
    
@@ -69,7 +72,7 @@ echo "<div id='savingsuccess' style='display:block'>Saved!</div>
 </p>
 
   <p>
-siteTheme
+Site Theme:
     <input name="siteTheme" type="text" id="siteTheme" value="<?php echo $siteTheme;?>"> 
 
     
@@ -77,31 +80,39 @@ siteTheme
 </p>
 
   <p>
-siteTitle
+Site Title:
     <input name="siteTitle" type="text" id="siteTitle" value="<?php echo $siteTitle;?>">
 
    </p>
 
   <p>
-siteHomepage
-    <input name="siteHomepage" type="text" id="siteHomepage" value="<?php echo $siteHomepage;?>">
+  Index/Homepage:
+    <select name="siteHomepage" id="siteHomepage">
+    <option value="<?php echo $siteHomepage;?>"><?php echo $siteHomepage;?></option>
+    <?php
+		$files = glob('Pages/pg/*.xml');
+			foreach($files as $file){
+			$getpages = new SimpleXMLElement($file, 0, true);
+			echo '<option value="'.$getpages->title.'">- '.$getpages->title.'</option>';}
+	?>
+   </select>
 
-   </p>
+  </p>
 
   <p>
-siteFavicon
+Favicon:
     <input name="siteFavicon" type="text" id="siteFavicon" value="<?php echo $siteFavicon;?>">
 
   </p>
 
   <p>
-menuLoader
+Menu Loader Script **
     <input name="menuLoader" type="text" id="menuLoader" value="<?php echo $menuLoader;?>">
 
   </p>
 
   <p>
-pageLoader
+Page Loader Script**
     <input name="pageLoader" type="text" id="pageLoader" value="<?php echo $pageLoader;?>">
 
    </p>
@@ -111,5 +122,5 @@ pageLoader
     <input type="submit" name="ReconfigureBTN" value="Save to 'Site/config.php'">
 
   </p>
-
+		<br /><br /><small>** Be very careful with these switches, they power your livesite navigation.</small>
 </form>

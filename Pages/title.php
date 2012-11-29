@@ -24,7 +24,7 @@ if(isset($_POST['change'])){
 			echo '<p>Some of the passwords do not match</p>';
 		}
 		?>
-		<p style="font-family:arial;font-size:14px;">Title: <input type="text" name="newtitle"/></p>
+		<p style="font-family:arial;font-size:14px;">Title: <input type="text" name="newtitle" value="<?php $files = glob('Pages/pg/'.$_GET['filename'].'.xml');foreach($files as $file){$gettitle = new SimpleXMLElement($file, 0, true);echo $gettitle->title;};?>"/></p>
         
         <input accesskey="s" type="submit" name="change" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:70px;left:650px;">
 	</form>

@@ -41,6 +41,9 @@ div.siteHeader {
 		margin-top:30px;
 		float:left;
 	}
+	div.siteHeaderText:hover,div.siteHeader:hover,span.siteHeaderTitle:hover,span.siteHeaderSlogan:hover {
+	     cursor:default;
+	}
 	span.siteHeaderTitle {
 		font-family: Ebrima;
 		font-size: 20px;

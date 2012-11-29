@@ -14,7 +14,7 @@ if(isset($_POST['change'])){
 <body>
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Change Username (<?php echo $_GET['username'];?>)</span>
 <form method="post" action="">
-		<p style="font-family:arial;font-size:14px;">Username: <input type="text" name="newusername" /></p>
+		<p style="font-family:arial;font-size:14px;">Username: <input type="text" name="newusername" value="<?php echo $_GET['username'];?>"/></p>
         
         <input accesskey="s" type="submit" name="change" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:70px;left:650px;">
 	</form>

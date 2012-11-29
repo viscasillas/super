@@ -8,7 +8,7 @@
 // Sitewide configurations
 
 // URL
-$siteURL = "http://localhost/super/";
+$siteURL = "http://localhost/xpanel/";
 
 // Theme
 $siteTheme = "default";
