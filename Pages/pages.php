@@ -1,12 +1,25 @@
-<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">All Pages</span><br><br>
+<style type="text/css">
+a.renameLink:link, a.renameLink:active, a.renameLink:visited {
+	color:#000;
+	font-family:arial;
+	font-size:12px;
+	text-decoration:none;
+}
+a.renameLink:hover {
+	background-color: #FFC;
+	font-family:Arial, Helvetica, sans-serif;
+	cursor:default;
+}
+</style>
+<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span><br><br>
 <table width="600px" border="0">
   <tr>
-    <td style="font-family:arial;font-size:14px;"><i><b>Title:</b></i></td>
-    <td style="font-family:arial;font-size:14px;"><i><b>Filename:</b></i></td>
-    <td style="font-family:arial;font-size:14px;"><i><b>Size(b):</b></i></td>
-    <td style="font-family:arial;font-size:14px;"><i><b>Module:</b></i></td>
-    <td style="font-family:arial;font-size:14px;"><i><b>Delete:</b></i></td>
-    <td style="font-family:arial;font-size:14px;"><i><b>Rename:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Title:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Filename:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Size(b):</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Module:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Delete:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Rename:</b></i></td>
   </tr>
 <?php
 			$files = glob('Pages/pg/*.xml');
@@ -26,12 +39,12 @@
                 </form>
 				</td>
 				<td>
-					'.
+					<span style="font-size:12px;font-family:Times New Roman, Times, serif;cursor:default;">'.
 					filesize($docsize)
-					.'
+					.'</span>
 				</td>
 				<td>
-				'.$xml->cpage.'
+				<span style="font-size:12px;font-family:Times New Roman, Times, serif;cursor:default;">'.$xml->cpage.'<span>
 				</td>
 				<td>
 				<form method="post" action="Pages/delete.php">
@@ -44,7 +57,7 @@
 				</form>-->
 				</td>
 				<td>
-				<a href="admin.php?mod=Pages/title&filename='.$xml->docname.'">'.$xml->docname.'</a>
+				<a class="renameLink" href="admin.php?mod=Pages/title&filename='.$xml->docname.'">'.$xml->docname.'</a>
 				</td>
 				</tr>
 				'

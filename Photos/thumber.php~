@@ -54,6 +54,7 @@ function createThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
 
 createThumbs("Photos/images/","Photos/thumbs/",100);
 header("refresh: 3; url=admin.php?mod=Photos/thumbs");
+
 ?>
 <html>
 <head>

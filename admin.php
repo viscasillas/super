@@ -63,6 +63,7 @@ closedir($dh);
 </head>
 
 <body>
+
 <div class="jumper" ondragstart="return false" onselectstart="return false">
 <?php
 
@@ -73,10 +74,26 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
+<div class="xPanelStatusBar">super:.(v0.3)<small>by: <b>vivalavisca</b></small><br />build (000003)</div>
+<div class="xPanelAdminSettingsWidget">
+  <div class="xPanelAdminSettingsWidget_link">
+  	Administrator (<small><?php echo $_SESSION['username']; ?></small>)
+  </div>
+  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('admin.php?mod=Site/settings','_self');">
+  	Settings
+  </div>
+  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('?mod=Security/changepassword','_self');">
+  	Password
+  </div>
+  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('?mod=Security/logout','_self');">
+  	Logout
+  </div>
 </div>
+</div>
+
 <div class="xPanel_toolbar">
 <div class="xPanel_menuList">
-<img src="System/img/super_logo.png" onClick="window.open('?mod=Pages/pages','_self');"><br />
+<img src="System/img/super_modern.png" onClick="window.open('?mod=Pages/pages','_self');"><br />
 <!-- Module menus -->
 <?php  
 // Scans the root directory in xPanel for any installed modules

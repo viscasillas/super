@@ -44,6 +44,7 @@
 	background-color:#333333;
 	background-image:url(System/img/previewWindow.png);
 	position:fixed;
+	z-index:600;
 }
 .previewImage {
 	width: 250px;
