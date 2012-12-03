@@ -13,7 +13,7 @@
 <div class="menuBar">
 	<div class="menuBar_linksContainer">
         <?php include($menuLoader);?>
-        <a href="#" id="loginbutton" class="menuLinks" onclick="popup('popUpDiv')">Login</a>
+        <!--<a href="#" id="loginbutton" class="menuLinks" onclick="popup('popUpDiv')">Login</a>-->
     </div>
 </div>
 <div class="contentBox">

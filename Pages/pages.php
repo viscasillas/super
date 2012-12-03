@@ -85,7 +85,7 @@ a.renameLink:hover {
 				</form>-->
 				</td>
 				<td>
-				<a class="renameLink" href="admin.php?mod=Pages/title&filename='.$xml->docname.'">'.$xml->docname.'</a>
+				<a class="renameLink" href="admin.php?mod=Pages/title&filename='.$xml->docname.'">'.$xml->title.'</a>
 				</td>
 				</tr>
 				'
