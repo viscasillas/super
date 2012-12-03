@@ -70,7 +70,7 @@ header('Location: admin.php?mod=Site/settings','5');
     <li class="TabbedPanelsTab" tabindex="0">Configuration</li>
     <li class="TabbedPanelsTab" tabindex="0">Theme</li>
     <li class="TabbedPanelsTab" tabindex="0">Advanced</li>
-    <li class="TabbedPanelsTab" tabindex="0">GitFix</li>
+    <li class="TabbedPanelsTab" tabindex="0">Tools</li>
   </ul>
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent">
@@ -145,6 +145,7 @@ header('Location: admin.php?mod=Site/settings','5');
     </div>
     <div class="TabbedPanelsContent">
     <p><a href="admin.php?mod=System/gitfix">GitFix</a></p>
+    <p><a href="admin.php?mod=System/chainlog/full">Chainlog</a></p>
     </div>
   </div>
 </div>
