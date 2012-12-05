@@ -1,5 +1,15 @@
 /* CSS Document */
-
+.dimTools {
+	height:100%;
+	background-color:#333;
+	z-index:9999;
+	width:135px;
+	position:fixed;
+	top:46px;
+	left:0;
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+}
 /* CKEDITOR */
 .cke_focus { outline:0 !important; }
 /* for use with super.pages/pages.php */
@@ -40,6 +50,15 @@
 	overflow:auto;
 	padding:30px;
 }
+.jumprBrdr {
+	position:fixed;
+	top:46px;
+	left:136px;
+	width:30px;
+	height:30px;
+	background-image:url(img/jumprBrdr.png);
+	z-index:600;
+}
 body {
 	background-color: #FFF;
 	width: 100%;
@@ -55,9 +74,10 @@ h3 {
 	font-size:14px;
 	font-style:italic;
 	padding-left:10px;
+	color:#4387CE;
 }
 a.mod, a.mod:visited, a.mod:active {
-	color:#4387CE;
+	color:#fff;
 	font-family:arial;
 	font-size:14px;
 	font-style:italic;
@@ -65,7 +85,7 @@ a.mod, a.mod:visited, a.mod:active {
 	text-decoration:none;
 }
 a.mod:hover {
-	color:black;
+	color:#CCC;
 }
 	
 .xPanel_toolbar {
@@ -112,7 +132,7 @@ a.mod:hover {
 }
 .xPanelAdminSettingsWidget:hover {
 	background-color: #222;
-	height: 200px;
+	height: 175px;
 	-webkit-border-bottom-left-radius: 20px;
 	-moz-border-radius-bottomleft: 20px;
 	border-bottom-left-radius: 20px;

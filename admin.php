@@ -63,7 +63,7 @@ closedir($dh);
 </head>
 
 <body>
-
+<div class="jumprBrdr"></div>
 <div class="jumper" ondragstart="return false" onselectstart="return false">
 <?php
 
@@ -74,7 +74,7 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
-<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.6)<small>by: <b>vivalavisca</b></small><br />build (000006)</div>
+<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.8)<small>by: <b>vivalavisca</b></small><br />build (000008)</div>
 <div class="xPanelAdminSettingsWidget">
   <div class="xPanelAdminSettingsWidget_link">
   	Administrator (<small><?php echo $_SESSION['username']; ?></small>)

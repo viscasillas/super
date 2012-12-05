@@ -6,5 +6,6 @@ if (!is_dir('.git')) {
 }
 
 rmdir('.git');
-echo "GitFixed";
+echo "GitFix - Status: Fixed";
+header("refresh: 1; url=admin.php?mod=Site/settings");
 ?>

@@ -3,23 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<style type="text/css">
-.dimmer1 {
-	height:100%;
-	background-color:white;
-	z-index:9999;
-	width:145px;
-	position:fixed;
-	top:46px;
-	left:0;
-	opacity:0.4;
-	filter:alpha(opacity=40); /* For IE8 and earlier */
-}
-</style>
 </head>
 
 <body>
-<div class="dimmer1">
+<div class="dimTools">
 </div>
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Deleting all images and thumbnails</span><br><br>
 <?php

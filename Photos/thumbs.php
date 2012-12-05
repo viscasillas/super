@@ -20,7 +20,7 @@
 	background-image:url(System/img/deleteBGbig_hover.png);
 }
 .animage {
-	border: thick solid #FFF;
+	border: thick solid #EEE;
 }
 .animage:hover {
 	border-top-width: thick;
@@ -31,10 +31,10 @@
 	border-right-style: solid;
 	border-bottom-style: solid;
 	border-left-style: solid;
-	border-top-color: #FFF;
-	border-right-color: #FFF;
+	border-top-color: #EEE;
+	border-right-color: #EEE;
 	border-bottom-color: #CCC;
-	border-left-color: #FFF;
+	border-left-color: #EEE;
 }
 .previewWindow {
 	top:0;
@@ -44,7 +44,7 @@
 	background-color:#333333;
 	background-image:url(System/img/previewWindow.png);
 	position:fixed;
-	z-index:600;
+	z-index:800;
 }
 .previewImage {
 	width: 250px;

@@ -67,10 +67,10 @@ header('Location: admin.php?mod=Site/settings','5');
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Sitewide Settings</span><br><br />
 <div id="TabbedPanels1" class="TabbedPanels">
   <ul class="TabbedPanelsTabGroup">
-    <li class="TabbedPanelsTab" tabindex="0">Configuration</li>
-    <li class="TabbedPanelsTab" tabindex="0">Theme</li>
-    <li class="TabbedPanelsTab" tabindex="0">Advanced</li>
-    <li class="TabbedPanelsTab" tabindex="0">Tools</li>
+    <li class="TabbedPanelsTab" tabindex="1">Configuration</li>
+    <li class="TabbedPanelsTab" tabindex="2">Theme</li>
+    <li class="TabbedPanelsTab" tabindex="3">Advanced</li>
+    <li class="TabbedPanelsTab" tabindex="4">Tools</li>
   </ul>
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent">
@@ -117,9 +117,6 @@ header('Location: admin.php?mod=Site/settings','5');
   </p>
     </div>
     <div class="TabbedPanelsContent">
-    <p>
-    testing out beta browser for theme
-    </p>
      <p>
     Site Theme:
     <input name="siteTheme" type="text" id="siteTheme" value="<?php echo $siteTheme;?>"> 
@@ -144,8 +141,10 @@ header('Location: admin.php?mod=Site/settings','5');
     
     </div>
     <div class="TabbedPanelsContent">
-    <p><a href="admin.php?mod=System/gitfix">GitFix</a></p>
-    <p><a href="admin.php?mod=System/chainlog/full">Chainlog</a></p>
+    <p><a href="admin.php?mod=System/gitfix">System / GitFix</a></p>
+    <p><a href="admin.php?mod=System/chainlog/full">System / Chainlog</a></p>
+    <p><a href="admin.php?mod=Photos/purge">Photos / Purge All</a></p>
+    <p><a href="admin.php?mod=Photos/thumber">Photos / ReThumb</a></p>
     </div>
   </div>
 </div>

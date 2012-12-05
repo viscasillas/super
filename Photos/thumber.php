@@ -57,24 +57,11 @@ header("refresh: 3; url=admin.php?mod=Photos/thumbs");
 ?>
 <html>
 <head>
-<style type="text/css">
-.dimmer1 {
-	height:100%;
-	background-color:white;
-	z-index:9999;
-	width:145px;
-	position:fixed;
-	top:46px;
-	left:0;
-	opacity:0.4;
-	filter:alpha(opacity=40);
-}
-</style>
 </head>
 <body>
 <br /><br />
 <small>Window will refresh in (3) seconds.</small>
-<div class="dimmer1">
+<div class="dimTools">
 </div>
 </body>
 </html>

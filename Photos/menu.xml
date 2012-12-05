@@ -12,12 +12,4 @@
 		<name>Upload</name>
 		<location>upload</location>
 	</menuItem>
-	<menuItem>
-		<name>ReThumb</name>
-		<location>thumber</location>
-	</menuItem>
-	<menuItem>
-		<name>Purge</name>
-		<location>purge</location>
-	</menuItem>
 </moduleMenu>
