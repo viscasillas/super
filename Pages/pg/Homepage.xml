@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ls><title>Homepage</title><cpage>pages</cpage><content>&lt;h1&gt;&#xD;
+<ls><title>Homepage</title><cpage>pages</cpage><permissions>edit</permissions><content>&lt;h1&gt;&#xD;
 	Welcome,&lt;/h1&gt;&#xD;
 &lt;p&gt;&#xD;
 	To your very boring website template, to inform you of the power of super:. And how super: can help you build your custom website quickly and efficiently. Please access super: with (username: super, password: duper) to get started.&lt;br /&gt;&#xD;
@@ -15,4 +15,4 @@
 &lt;p&gt;&#xD;
 	Enjoy.&lt;br /&gt;&#xD;
 	- Jose Viscasillas&lt;/p&gt;&#xD;
-</content><docname>Homepage</docname></ls>
+</content><onmenu>yes</onmenu><docname>Homepage</docname></ls>

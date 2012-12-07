@@ -10,8 +10,10 @@ if(isset($_POST['create'])){
 				}</script>
 	";
 	$title = $_POST['title'];
+	$onmenu = $_POST['onmenu'];
 	$docname = preg_replace('/[^A-Za-z]/', '', $_POST['title']);
 	$content = $_POST['content'];
+	$permissions = $_POST['permissions'];
 	$cpage = $_POST['cpage'];
 	
 	if(file_exists('pg/' . $title . '.xml')){
@@ -24,8 +26,10 @@ if(isset($_POST['create'])){
 		$xml = new SimpleXMLElement('<ls></ls>');
 		$xml->addChild('title', $title);
 		$xml->addChild('cpage', $cpage);
+		$xml->addChild('onmenu', $onmenu);
 		$xml->addChild('content', $content);
 		$xml->addChild('docname', $docname);
+		$xml->addChild('permissions', $permissions);
 		$xml->asXML('Pages/pg/' . $docname . '.xml');
 		header('Location: ?mod=Pages/pages');
 	}
@@ -59,6 +63,8 @@ if(isset($_POST['create'])){
 	</table>
 		
 		<input type="text" name="content" size="20" style="display:none;" />
+        <input type="text" name="onmenu" size="20" style="display:none;" />
+        <input type="text" name="permissions" size="20" style="display:none;" value="edit" />
 		
 		<input accesskey="s" type="submit" name="create" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:70px;left:650px;">
 	</form>

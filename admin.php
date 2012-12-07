@@ -40,25 +40,25 @@ var '.$file.' = new Spry.Data.XMLDataSet("'.$file.'/menu.xml", "moduleMenu/menuI
 closedir($dh);
 ?>
 <script language=JavaScript>
-    var message='This program is a development beta build of my current version of xPanel, all programs that I (Jose Viscasillas) have put together for a future release of an awesome open-source CMS. This build of xPanel will remain propriatary software until the date of January 01 2013. After said date xPanel will be launched as an open-source project along with its sister project, codenamed "super:panel" with "super:panel" being propriatary code served as a paid-for program to be recognized as an upgrade to the xPanel build that will be released on Jaunary 01 2013 with its formal title xPanel - Jose Viscasillas';         
-    function clickIE4(){
-        if (event.button==2){ alert(message); return false; }
-    }
-    function clickNS4(e){
-        if (document.layers||document.getElementById&&!document.all){ 
-            if (e.which==2||e.which==3){ 
-                alert(message);
-                return false; 
-            } 
-        }
-    }
-    if (document.layers){ 
-        document.captureEvents(Event.MOUSEDOWN);
-        document.onmousedown=clickNS4;
-    } else if (document.all&&!document.getElementById){
-        document.onmousedown=clickIE4; 
-    } 
-    document.oncontextmenu=new Function('alert(message); return false') 
+//    var message='This program is a development beta build of my current version of xPanel, all programs that I (Jose Viscasillas) have put together for a future release of an awesome open-source CMS. This build of xPanel will remain propriatary software until the date of January 01 2013. After said date xPanel will be launched as an open-source project along with its sister project, codenamed "super:panel" with "super:panel" being propriatary code served as a paid-for program to be recognized as an upgrade to the xPanel build that will be released on Jaunary 01 2013 with its formal title xPanel - Jose Viscasillas';         
+//    function clickIE4(){
+//        if (event.button==2){ alert(message); return false; }
+//    }
+//    function clickNS4(e){
+//        if (document.layers||document.getElementById&&!document.all){ 
+//            if (e.which==2||e.which==3){ 
+//                alert(message);
+//                return false; 
+//            } 
+//        }
+//    }
+//    if (document.layers){ 
+//        document.captureEvents(Event.MOUSEDOWN);
+//        document.onmousedown=clickNS4;
+//    } else if (document.all&&!document.getElementById){
+//        document.onmousedown=clickIE4; 
+//    } 
+//    document.oncontextmenu=new Function('alert(message); return false') 
 </script>
 </head>
 

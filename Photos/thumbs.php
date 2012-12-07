@@ -82,10 +82,22 @@
 	background-color:#F2F0C8;
 	color:#333;
 }
+.copyBtn {
+	margin-top:10px;
+	margin-left: 20px;
+	background-color:#4387CE;
+	color:#fff;
+	font-family:arial;
+	font-size:18px;
+	width:260px;
+	border: thick solid #FFF;
+	outline:none;	
+}
 </style>
 </head>
 
 <body>
+<script type="text/javascript" src="System/zeroclipboard/ZeroClipboard.js"></script>
 <?php
 if(isset($_POST['deleteIMG'])){
 	unlink($_GET['img']);
@@ -103,7 +115,8 @@ if(empty($_GET['img']))
    </form>
    <img class='previewImage' src='".$_GET['img']."'/>
    <br />
-   <input type='text' value='".$siteURL.$_GET['img']."'  class='imgURLbox'/>
+   <input name='box-content' id='box-content' type='text' value='".$siteURL.$_GET['img']."'  class='imgURLbox'/>
+   <input type='button' id='copy' name='copy' value='Copy' class='copyBtn' />
    </div>
    " ;
 ?>
@@ -127,6 +140,26 @@ function dir_is_empty($dir) {
   return (count(scandir($dir)) == 2);
 }
 ;?>
+
+
+
+
+<script type="text/javascript">
+//set path
+ZeroClipboard.setMoviePath('http://localhost/xpanel/System/zeroclipboard/ZeroClipboard.swf');
+//create client
+var clip = new ZeroClipboard.Client();
+//event
+clip.addEventListener('mousedown',function() {
+  clip.setText(document.getElementById('box-content').value);
+});
+clip.addEventListener('complete',function(client,text) {
+  alert('super: ' + text);
+});
+//glue it to the button
+clip.glue('copy');
+</script>
+
 </div>
 </body>
 </html>

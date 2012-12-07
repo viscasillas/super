@@ -37,10 +37,14 @@ if(isset($_POST['overwrite'])){
 	$title = $_POST['title'];
 	$content = $_POST['content'];
 	$cpage = $_POST['cpage'];
+	$permissions = $_POST['permissions'];
+	$onmenu = $_POST['onmenu'];
 	$xml = new SimpleXMLElement('<ls></ls>');
 	$xml->addChild('title', $title);
 	$xml->addChild('cpage', $cpage);
+	$xml->addChild('permissions', $permissions);
 	$xml->addChild('content', $content);
+	$xml->addChild('onmenu', $onmenu);
 	$xml->addChild('docname', $docname);
 	$xml->asXML('Pages/pg/' . $docname . '.xml');
 //	header('Location: ?mod=Pages/pages');
@@ -56,6 +60,8 @@ if(isset($_POST['overwrite'])){
 		<form method="post" action="?mod=Pages/edit">
 		<input type="text" name="title" value="'.$xml->title.'" style="display:none;">
 		<input type="text" name="cpage" value="'.$xml->cpage.'" style="display:none;">
+		<input type="text" name="permissions" value="'.$xml->permissions.'" style="display:none;">
+		<input type="text" name="onmenu" value="'.$xml->onmenu.'" style="display:none;">
 		<textarea class="contentbox" id="content" name="content">'.$xml->content.'</textarea>
 		<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
 		<input type="text" name="docname" value="'.$xml->docname.'" style="display:none;">

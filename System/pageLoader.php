@@ -11,7 +11,13 @@
   		$files = glob('Pages/pg/'.$_GET['p'].'.xml');
 			foreach($files as $file){
 			$xml = new SimpleXMLElement($file, 0, true);
-			echo $xml->content;}
+			if($xml->cpage == "fgbs"){
+					echo 'Sorry! Only super can load fgbs files';
+				};
+		    if($xml->cpage == "pages"){
+					echo $xml->content;
+				};
+			}
   		}
 		
 			?>
