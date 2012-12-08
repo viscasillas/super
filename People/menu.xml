@@ -5,6 +5,10 @@
 		<location>users</location>
 	</menuItem>
 	<menuItem>
+		<name>Groups</name>
+		<location>groups</location>
+	</menuItem>
+	<menuItem>
 		<name>Add User</name>
 		<location>add</location>
 	</menuItem>

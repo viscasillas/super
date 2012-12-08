@@ -39,11 +39,11 @@ a.renameLink:hover {
 	border-left-style: none;
 	}
 </style>
-<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span><br><br>
+<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span>&nbsp;<small>(<a href="?mod=Pages/dpg_dir">dpg</a>)</small><br><br>
 <table width="80%" border="0">
   <tr>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Title:</b></i></td>
-    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Filename:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>File:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>On Menu:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Size(b):</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Opens in:</b></i></td>

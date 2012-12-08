@@ -51,6 +51,7 @@ if(isset($_POST['remove'])){
 		<tr>
 			<th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Username:</b></i></th>
 			<th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Email:</b></i></th>
+            <th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Group:</b></i></th>
             <th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Password <small>(md5)</small>:</b></i></th>
             <th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Delete:</b></i></th>
 		</tr>
@@ -62,6 +63,7 @@ if(isset($_POST['remove'])){
 			<tr class="fileList" style="text-align:left;">
 				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/username&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. basename($file, '.xml') .'</span></td>
 				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/email&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->email .'</span></td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/group&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->group .'</span></td>
 				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/pw&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->password .'</span></td>
 				<td>
 					<form method="post" action="">

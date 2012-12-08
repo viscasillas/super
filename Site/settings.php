@@ -145,6 +145,7 @@ header('Location: admin.php?mod=Site/settings','5');
     <p><a href="admin.php?mod=System/chainlog/full">System / Chainlog</a></p>
     <p><a href="admin.php?mod=Photos/purge">Photos / Purge All</a></p>
     <p><a href="admin.php?mod=Photos/thumber">Photos / ReThumb</a></p>
+    <p><a href="admin.php?mod=System/backup">System / Download backup</a></p>
     </div>
   </div>
 </div>

@@ -1,20 +1,4 @@
 <?xml version="1.0"?>
-<ls><title>Homepage</title><cpage>pages</cpage><permissions>edit</permissions><content>&lt;h1&gt;&#xD;
-	Welcome,&lt;/h1&gt;&#xD;
-&lt;p&gt;&#xD;
-	To your very boring website template, to inform you of the power of super:. And how super: can help you build your custom website quickly and efficiently. Please access super: with (username: super, password: duper) to get started.&lt;br /&gt;&#xD;
-	You may change the admin login as you wish, once you have successfully logged on. super: allows you to instantly install modules via. super:store.Here is a simple list of some modules you may want to add to your website right away:&lt;/p&gt;&#xD;
-&lt;p&gt;&#xD;
-	1. People, gives your super: site the ability to have users. ($2.99)&lt;br /&gt;&#xD;
-	2. Messages, allows contact between users on your site via. People module. ($2.99)&lt;br /&gt;&#xD;
-	3. Contact, lets visitors contact you directly. View these messages in super:. ($2.99)&lt;br /&gt;&#xD;
-	4. Shop, allow users in People module to shop on your site. ($2.99)&lt;br /&gt;&#xD;
-	5. Pages, content management system, add pages to your site. (Free / Prepackaged)&lt;/p&gt;&#xD;
-&lt;p&gt;&#xD;
-	Creating your own modules is super simple too. Just create a directory for your module in your site directory and have all links, functions, and forms pass through super:?mod={your_mod_dir}/{your_mod_page}. Then add create a menu.xml inside its directory so that super: will know which pages in the module directory to list on the your module menu on super:. Security of your custom modules are handled via. super: itself. Do not add your own security login scripts or it could make other modules vulnerable to false data submission, or data deletion. A module template is available in the System directory of your website.&lt;/p&gt;&#xD;
-&lt;p&gt;&#xD;
-	&lt;a href="?p=Underwater"&gt;Go Underwarter&lt;/a&gt;&lt;/p&gt;&#xD;
-&lt;h1&gt;&#xD;
-	Enjoy.&lt;br /&gt;&#xD;
-	- Jose Viscasillas&lt;/p&gt;&#xD;
+<ls><title>Home</title><cpage>pages</cpage><permissions>edit</permissions><content>&lt;p&gt;&#xD;
+	&lt;img alt="" src="http://localhost/xpanel/Photos/images/Arizona-Grand-Canyon.jpg" style="width: 200px; height: 133px;" /&gt;&lt;img alt="" src="http://localhost/xpanel/Photos/images/aggtelek-karst-and-slovak-karst-caves.jpg" style="width: 200px; height: 133px;" /&gt;&lt;/p&gt;&#xD;
 </content><onmenu>yes</onmenu><docname>Homepage</docname></ls>

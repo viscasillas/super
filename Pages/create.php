@@ -63,7 +63,7 @@ if(isset($_POST['create'])){
 			<select name="cpage" style="outline:none;">
   				<option value="pages">Pages</option>
   				<option value="dpg">Dyamic</option>
-                <option value="fgbs">FGBS</option>
+                <option value="fgbs">System</option>
 			</select>
 			</td>
 		</tr>
