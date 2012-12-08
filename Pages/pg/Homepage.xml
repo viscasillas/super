@@ -13,6 +13,8 @@
 &lt;p&gt;&#xD;
 	Creating your own modules is super simple too. Just create a directory for your module in your site directory and have all links, functions, and forms pass through super:?mod={your_mod_dir}/{your_mod_page}. Then add create a menu.xml inside its directory so that super: will know which pages in the module directory to list on the your module menu on super:. Security of your custom modules are handled via. super: itself. Do not add your own security login scripts or it could make other modules vulnerable to false data submission, or data deletion. A module template is available in the System directory of your website.&lt;/p&gt;&#xD;
 &lt;p&gt;&#xD;
+	&lt;a href="?p=Underwater"&gt;Go Underwarter&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;h1&gt;&#xD;
 	Enjoy.&lt;br /&gt;&#xD;
 	- Jose Viscasillas&lt;/p&gt;&#xD;
 </content><onmenu>yes</onmenu><docname>Homepage</docname></ls>

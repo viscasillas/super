@@ -74,7 +74,7 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
-<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.8)<small>by: <b>vivalavisca</b></small><br />build (000008)</div>
+<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.8c)<small>by: <b>vivalavisca</b></small><br />build (000008c)</div>
 <div class="xPanelAdminSettingsWidget">
   <div class="xPanelAdminSettingsWidget_link">
   	Administrator (<small><?php echo $_SESSION['username']; ?></small>)

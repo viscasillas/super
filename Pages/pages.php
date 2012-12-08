@@ -58,19 +58,63 @@ a.renameLink:hover {
 			$docsize = 'Pages/pg/'.$xml->docname.'.xml';
 			echo
 			'<tr class="fileList">
-				<td><form method="post" action="?mod=Pages/edit">
+				<td>
+				';
+				if($xml->cpage == "fgbs"){
+				echo '<form method="post" action="?mod=Pages/edit">
 				<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
                 <input type="submit" value="'.$xml->title.'" style="background-color:transparent;border:none;"/></input>
-                </form>
+                </form>';;
+					};
+				if($xml->cpage == "dpg"){
+				echo '<form method="post" action="?mod=Pages/dyamic">
+				<input type="text" name="dpgFile" value="'.$xml->docname.'" style="display:none;">
+                <input type="submit" value="'.$xml->title.'" style="background-color:transparent;border:none;"/></input>
+                </form>';;
+					};
+				if($xml->cpage == "pages"){
+				echo '<form method="post" action="?mod=Pages/edit">
+				<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
+                <input type="submit" value="'.$xml->title.'" style="background-color:transparent;border:none;"/></input>
+                </form>';
+					};
+			echo '		
 				</td>
-				<td><form method="post" action="?mod=Pages/edit">
+				<td>';
+				if($xml->cpage == "fgbs"){
+				echo '<form method="post" action="?mod=Pages/edit">
 				<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
                 <input type="submit" value="'.$xml->docname.'.xml" style="background-color:transparent;border:none;"/></input>
-                </form>
+                </form>';;
+					};
+				if($xml->cpage == "dpg"){
+				echo '<form method="post" action="?mod=Pages/dyamic">
+				<input type="text" name="dpgFile" value="'.$xml->docname.'" style="display:none;">
+                <input type="submit" value="'.$xml->docname.'.xml + dpg" style="background-color:transparent;border:none;"/></input>
+                </form>';;
+					};
+				if($xml->cpage == "pages"){
+				echo '<form method="post" action="?mod=Pages/edit">
+				<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
+                <input type="submit" value="'.$xml->docname.'.xml" style="background-color:transparent;border:none;"/></input>
+                </form>';
+					};
+				echo '
 				</td>
 				<td>
 				';
 				if($xml->cpage == "pages"){
+					if($xml->onmenu == "yes"){
+						echo '<a href="admin.php?mod=Pages/onmenu&filename='.$xml->docname.'">'.$xml->onmenu.'</a>';
+					};
+					if($xml->onmenu == "no"){
+						echo '<a href="admin.php?mod=Pages/onmenu&filename='.$xml->docname.'">'.$xml->onmenu.'</a>';
+					};
+					if($xml->onmenu == ""){
+						echo '<a href="admin.php?mod=Pages/onmenu&filename='.$xml->docname.'">n/a</a>';
+					};
+				};
+				if($xml->cpage == "dpg"){
 					if($xml->onmenu == "yes"){
 						echo '<a href="admin.php?mod=Pages/onmenu&filename='.$xml->docname.'">'.$xml->onmenu.'</a>';
 					};

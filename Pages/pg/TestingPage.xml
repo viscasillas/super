@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<ls><title>Testing Page</title><cpage>pages</cpage><permissions>edit</permissions><content>&lt;p&gt;&#xD;
+	Hello there&lt;/p&gt;&#xD;
+</content><onmenu>yes</onmenu><docname>TestingPage</docname></ls>

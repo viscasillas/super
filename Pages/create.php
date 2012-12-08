@@ -1,6 +1,12 @@
 <?php
 $errors = array();
 if(isset($_POST['create'])){
+	if($_POST['cpage'] == "dpg"){
+		$string = "Edit this =)";
+		$fp = fopen("Pages/dpg/".$_POST['title'].".php", "w");
+		fwrite($fp, $string);
+		fclose($fp);
+	};
 	echo "<div id='savingsuccess' style='display:block'>Saved!</div>
 			<script type='text/javascript'>
 				// close the div in 5 secs
@@ -55,15 +61,16 @@ if(isset($_POST['create'])){
 			<td><input style="width:300px;color:#BBB;font-style:italic;outline:none;" type="text" onclick="this.value='';" name="title" size="20" spellcheck="false" value="enter title for new page here then save (alt + s)"></input></td>
 			<td>
 			<select name="cpage" style="outline:none;">
-  				<option value="custom">Pages</option>
-  				<option value="photo">People</option>
+  				<option value="pages">Pages</option>
+  				<option value="dpg">Dyamic</option>
+                <option value="fgbs">FGBS</option>
 			</select>
 			</td>
 		</tr>
 	</table>
 		
 		<input type="text" name="content" size="20" style="display:none;" />
-        <input type="text" name="onmenu" size="20" style="display:none;" />
+        <input type="text" name="onmenu" size="20" style="display:none;" value="no" />
         <input type="text" name="permissions" size="20" style="display:none;" value="edit" />
 		
 		<input accesskey="s" type="submit" name="create" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:70px;left:650px;">

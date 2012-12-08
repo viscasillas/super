@@ -17,6 +17,9 @@
 		    if($xml->cpage == "pages"){
 					echo $xml->content;
 				};
+			if($xml->cpage == "dpg"){
+					include('Pages/dpg/'.$_GET['p'].'.php');
+				};
 			}
   		}
 		
