@@ -47,6 +47,8 @@ $result = create_zip(glob('Pages/dpg/*'),'System/backups/pages-dpg.zip');
 $result = create_zip(glob('People/users/*'),'System/backups/users.zip');
 $result = create_zip(glob('Site/default/*'),'System/backups/site-template.zip');
 $result = create_zip(glob('Site/config.php'),'System/backups/site-config.zip');
+$result = create_zip(glob('Photos/images/*.jpg'),'System/backups/photos-images.zip');
+$result = create_zip(glob('Photos/thumbs/*.jpg'),'System/backups/photos-thumbs.zip');
 //zips all of the zips together
 $result = create_zip(glob('System/backups/*'),'System/backups/latest.zip');
 //delete all the zips except for the zip containing all of the zips i am about to delete
@@ -55,6 +57,8 @@ unlink('System/backups/pages-dpg.zip');
 unlink('System/backups/users.zip');
 unlink('System/backups/site-template.zip');
 unlink('System/backups/site-config.zip');
+unlink('System/backups/photos-images.zip');
+unlink('System/backups/photos-thumbs.zip');
 echo "<a href='System/backups/latest.zip'>Download archive</a>";
 ?><br><br>
   <small>super:hints, Backups are automatically made everytime this page is loaded.</small>

@@ -1,0 +1,59 @@
+body {
+	background-image:url(bg.png);
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+	color:#222;
+	font-family:century gothic;
+	font-size:12px;
+}
+h1 {
+	color:#333;
+	font-family:century gothic;
+	font-size:15px;
+}
+p {
+	color:#222;
+	font-family:century gothic;
+	font-size:12px;
+}
+div.mainContainer {
+	width:400px;
+	height:500px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:50px;
+}
+div.menuContainer {
+	height:15px;
+	width:100%;
+	overflow: visible;
+}
+div.logoContainer {
+	height:80px;
+	width:100%;
+}
+div.pageContent {
+	width:400px;
+	height:400px;
+}
+a.menuLinks {
+	background-color:#4487CE;
+	width:100px;
+	height:25px;
+	color:#fff;
+	padding:5px;
+	font-family:Century Gothic;
+	text-decoration:none;
+	margin-right:20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+span.logoText {
+	color:#4487CE;
+	font-family:century gothic;
+	font-size:68px;
+}

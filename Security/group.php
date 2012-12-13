@@ -1,11 +1,11 @@
 <?php	
 if(isset($_POST['change'])){
 	$new_group = $_POST['new_group'];
-	$xml = new SimpleXMLElement('People/users/' . $_GET['username'] . '.xml', 0, true);
+	$xml = new SimpleXMLElement('Security/users/' . $_GET['username'] . '.xml', 0, true);
 	
 			$xml->group = $new_group;
-			$xml->asXML('People/users/' . $_GET['username'] . '.xml');
-			header('Location: admin.php?mod=People/users');
+			$xml->asXML('Security/users/' . $_GET['username'] . '.xml');
+			header('Location: admin.php?mod=Security/users');
 			die;
 }
 
@@ -21,7 +21,7 @@ if(isset($_POST['change'])){
 	<form method="post" action="">
 		<p style="font-family:arial;font-size:14px;">Group: 
         <select name="new_group">
-        	<option value="<?php $files = glob('People/users/'.$_GET['username'].'.xml');foreach($files as $file){$getemail = new SimpleXMLElement($file, 0, true);echo $getemail->group;};?>"><?php $files = glob('People/users/'.$_GET['username'].'.xml');foreach($files as $file){$getemail = new SimpleXMLElement($file, 0, true);echo $getemail->group;};?></option>
+        	<option value="<?php $files = glob('Security/users/'.$_GET['username'].'.xml');foreach($files as $file){$getemail = new SimpleXMLElement($file, 0, true);echo $getemail->group;};?>"><?php $files = glob('Security/users/'.$_GET['username'].'.xml');foreach($files as $file){$getemail = new SimpleXMLElement($file, 0, true);echo $getemail->group;};?></option>
             <option value="admin">-admin</option>
             <option value="user">-user</option>
         </select></p>

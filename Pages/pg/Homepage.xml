@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
-<ls><title>Home</title><cpage>pages</cpage><permissions>edit</permissions><content>&lt;p&gt;&#xD;
-	&lt;img alt="" src="http://localhost/xpanel/Photos/images/Arizona-Grand-Canyon.jpg" style="width: 200px; height: 133px;" /&gt;&lt;img alt="" src="http://localhost/xpanel/Photos/images/aggtelek-karst-and-slovak-karst-caves.jpg" style="width: 200px; height: 133px;" /&gt;&lt;/p&gt;&#xD;
+<ls><title>Home</title><cpage>dpg</cpage><permissions>edit</permissions><content>&lt;h1&gt;&#xD;
+	&lt;img alt="" src="http://localhost/xpanel/Photos/images/ilmilluminate.jpg" style="width: 100%;" /&gt;&lt;/h1&gt;&#xD;
+&lt;h1&gt;&#xD;
+	Welcome,&lt;/h1&gt;&#xD;
+&lt;p&gt;&#xD;
+	To a very boring website with no content.&lt;/p&gt;&#xD;
 </content><onmenu>yes</onmenu><docname>Homepage</docname></ls>

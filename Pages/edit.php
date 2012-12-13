@@ -64,8 +64,14 @@ if(isset($_POST['overwrite'])){
 		<input type="text" name="onmenu" value="'.$xml->onmenu.'" style="display:none;">
 		<textarea class="contentbox" id="content" name="content">'.$xml->content.'</textarea>
 		<input type="text" name="page" value="'.$xml->docname.'" style="display:none;">
-		<input type="text" name="docname" value="'.$xml->docname.'" style="display:none;">
-		<input accesskey="s" type="submit" name="overwrite" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:65px;left:850px;"></form>';}
+		<input type="text" name="docname" value="'.$xml->docname.'" style="display:none;">';
+		if($xml->permissions == "edit"){
+						echo '<input accesskey="s" type="submit" name="overwrite" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:65px;left:850px;">';};
+		if($xml->permissions == "full"){
+						echo '<input accesskey="s" type="submit" name="overwrite" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:65px;left:850px;">';};
+		if($xml->permissions == "read"){
+						echo 'Not Edit';}
+		echo '</form>';}
 ?>
 <script type="text/javascript">
 	CKEDITOR.replace( 'content',

@@ -5,8 +5,10 @@ if(isset($_POST['login'])){
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	$c_password = $_POST['c_password'];
+	$usertype = $_POST['usertype'];
+	$delete = 'allow';
 	
-	if(file_exists('People/users/' . $username . '.xml')){
+	if(file_exists('Security/users/' . $username . '.xml')){
 		$errors[] = 'Username already exists';
 	}
 	if($username == ''){
@@ -25,8 +27,10 @@ if(isset($_POST['login'])){
 		$xml = new SimpleXMLElement('<user></user>');
 		$xml->addChild('password', md5($password));
 		$xml->addChild('email', $email);
-		$xml->asXML('People/users/' . $username . '.xml');
-		header('Location: admin.php?mod=People/users');
+		$xml->addChild('delete', $delete);
+		$xml->addChild('group', $usertype);
+		$xml->asXML('Security/users/' . $username . '.xml');
+		header('Location: admin.php?mod=Security/users');
 		die;
 	}
 }
@@ -53,7 +57,12 @@ if(isset($_POST['login'])){
 		<p style="font-family:arial;font-size:14px;">Email <input type="text" name="email" size="20" /></p>
 		<p style="font-family:arial;font-size:14px;">Password <input type="password" name="password" size="20" /></p>
 		<p style="font-family:arial;font-size:14px;">Confirm Password <input type="password" name="c_password" size="20" /></p>
-		
+		<p style="font-family:arial;font-size:14px;">User Type: 
+        	<select name="usertype">
+            	<option value="admin">-admin</option>
+            	<option value="user">-user</option>
+            </select>
+        </p>
          <input accesskey="s" type="submit" name="login" style="border:0;outline:none;width:26px;height:38px;background-image:url(System/img/save.png);color:transparent;position:fixed;top:70px;left:650px;">
 	</form>
 </body>

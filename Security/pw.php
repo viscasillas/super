@@ -5,7 +5,7 @@ if(isset($_POST['change'])){
 
 			$xml->password = $new;
 			$xml->asXML('People/users/' . $_GET['username'] . '.xml');
-			header('Location: admin.php?mod=People/users');
+			header('Location: admin.php?mod=Security/users');
 			die;
 
 }

@@ -50,10 +50,12 @@ echo "<div id='savingsuccess' style='display:block'>Saved!</div>
 ?>
 <div class="editorTools">
 	<span class="editableWithStaticLook" style="font-family:arial;font-size:30px;color:#333;font-style:italic;" onClick="window.open('?mod=Pages/title&filename=<?php echo $filename;?>','_self');">&nbsp;<?php echo $title;?></span>
-	<?php echo '<form method="post" action="?mod=Pages/dyamic_edit">
+    <?php echo '<form method="post" action="?mod=Pages/dyamic">
 				<input type="text" name="dpgFile" value="'.$docname.'" style="display:none;">
                 <input type="submit" value="Code/Design toggle" style="position:fixed;top:70px;left:500px;"/></input>
-                </form>';?><br />
+                </form>';?>
+    
+    <br />
 	<input type="text" disabled="disabled" value="<?php echo $siteURL."?p=".$docname;?>" style="margin-left:5px;width:400px;font-size:10px;">	
 </div>
 <form action="" method="post" name="install" id="install"><br /><br /><br /><br />
@@ -69,6 +71,22 @@ if($xml->permissions == "edit"){
 						echo 'Not Edit';}
 ?>
 </form>
+<script type="text/javascript">
+	CKEDITOR.replace( 'pageContent',
+      {
 
+        toolbar :
+            [
+                { name: 'toolbar', items : [ 'Preview','Undo','Redo','Find','Replace','-','SelectAll','-','Scayt' ] },
+                { name: 'insert', items : [ 'Image','Table','Smiley','SpecialChar'] },
+                { name: 'styles', items : [ 'Styles','Format' ] },
+                { name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },
+                { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote' ] },
+                { name: 'tools', items : [ 'Link','Unlink','Anchor','Maximize' ] }
+            ],
+        width: "80%",
+        height: "450px"
+        });
+</script>
   <br /><br /><small>** Be very careful with these switches, they power your livesite navigation.</small>
 

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <moduleMenu>
+	<title>People</title>
 	<menuItem>
 		<name>Users</name>
 		<location>users</location>
-	</menuItem>
-	<menuItem>
-		<name>Groups</name>
-		<location>groups</location>
 	</menuItem>
 	<menuItem>
 		<name>Add User</name>

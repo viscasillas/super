@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['change'])){
-	rename('People/users/'.$_GET['username'].'.xml','People/users/'.$_POST['newusername'].'.xml');
-	header('Location: admin.php?mod=People/users');
+	rename('Security/users/'.$_GET['username'].'.xml','Security/users/'.$_POST['newusername'].'.xml');
+	header('Location: admin.php?mod=Security/users');
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

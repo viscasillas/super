@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header('Location: admin.php?mod=Security/login');
+header('Location: login.php');

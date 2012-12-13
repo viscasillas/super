@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<user><password>e542050f239e0b8f53e70464bd9665e1</password><email>viscasillas@me.com</email></user>
+<user><password>e542050f239e0b8f53e70464bd9665e1</password><email>viscasillas@me.com</email><group>admin</group><delete>deny</delete></user>

@@ -39,17 +39,17 @@ a.renameLink:hover {
 	border-left-style: none;
 	}
 </style>
-<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span>&nbsp;<small>(<a href="?mod=Pages/dpg_dir">dpg</a>)</small><br><br>
+<span style="font-family:arial;font-size:20px;color:#333;font-style:italic;cursor:default;">All Pages</span><br><br>
 <table width="80%" border="0">
   <tr>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Title:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>File:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>On Menu:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Size(b):</b></i></td>
-    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Opens in:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Format:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Delete:</b></i></td>
     <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Rename:</b></i></td>
-    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Access:</b></i></td>
+    <td style="font-family:arial;font-size:14px;cursor:default;"><i><b>Permissions:</b></i></td>
   </tr>
 <?php
 			$files = glob('Pages/pg/*.xml');
@@ -90,7 +90,7 @@ a.renameLink:hover {
 				if($xml->cpage == "dpg"){
 				echo '<form method="post" action="?mod=Pages/dyamic">
 				<input type="text" name="dpgFile" value="'.$xml->docname.'" style="display:none;">
-                <input type="submit" value="'.$xml->docname.'.xml + dpg" style="background-color:transparent;border:none;"/></input>
+                <input type="submit" value="'.$xml->docname.'.xml dpg" style="background-color:transparent;border:none;"/></input>
                 </form>';;
 					};
 				if($xml->cpage == "pages"){
@@ -131,9 +131,21 @@ a.renameLink:hover {
 				echo '
 				</td>
 				<td>
-					<span style="font-size:12px;font-family:Times New Roman, Times, serif;cursor:default;">'.
-					filesize($docsize)
-					.'</span>
+					<span style="font-size:12px;font-family:Times New Roman, Times, serif;cursor:default;">';
+					if($xml->cpage == "dpg"){
+						$xmlFileSize_dpg = filesize('Pages/pg/'.$xml->docname.'.xml');
+						$phpFileSize_dpg = filesize('Pages/dpg/'.$xml->docname.'.php');
+						echo $xmlFileSize_dpg + $phpFileSize_dpg;
+					};
+					if($xml->cpage == "pages"){
+						$xmlFileSize_pages = filesize('Pages/pg/'.$xml->docname.'.xml');	
+						echo $xmlFileSize_pages;
+					};
+					if($xml->cpage == "fgbs"){
+						$xmlFileSize_pages = filesize('Pages/pg/'.$xml->docname.'.xml');	
+						echo $xmlFileSize_pages;
+					};
+					echo '</span>
 				</td>
 				<td>
 				<span style="font-size:12px;font-family:Times New Roman, Times, serif;cursor:default;">'.$xml->cpage.'<span>

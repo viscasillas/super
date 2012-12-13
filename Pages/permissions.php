@@ -37,5 +37,7 @@ if(isset($_POST['change'])){
         
         
 	</form>
+    <br />
+        <small>super:hints<br />Read - file is public for website visitors, admins, and users. But cannot be altered.<br /> Full - file is public for website visitors, admins, and users. And editable by admin and can be deleted by admin. <br />Edit - file is public for website visitors, admins, and users. And editable by admin but cannot be deleted.</small>
 </body>
 </html>

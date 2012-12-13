@@ -1,4 +1,24 @@
 /* CSS Document */
+/*super:.ml markup css for use with dyamic pages*/
+superml {
+	width:100%;
+	padding-left:10px;
+	height:100%;
+	top:0;
+	left:0;
+	position:fixed;
+	background-color:#EEE;
+	color:#4387CE;
+	font-family:arial;
+}
+a.superml, a.superml:hover, a.superml:active, a.superml:visited  {
+	color:#4387CE;
+	font-family:arial;
+	padding-right:10px;
+	text-decoration:none;
+	font-size:12px;
+}
+/*sitewide*/
 div.poweredby {
 	width:32px;
 	height:30px;

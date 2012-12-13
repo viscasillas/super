@@ -5,6 +5,7 @@ if(!file_exists('Security/users/' . $_SESSION['username'] . '.xml')){
 	header('Location: login.php');
 	die;
 }
+
 // generate api variables for modules to list their names and page
 $moduleName = $_GET['mod'];
 ?>
@@ -74,10 +75,10 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
-<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.9)(000009)<br /><small>by: <b>vivalavisca</b></small></div>
+<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.9b)(000009b)<br /><small>by: <b>vivalavisca</b></small></div>
 <div class="xPanelAdminSettingsWidget">
   <div class="xPanelAdminSettingsWidget_link">
-  	Administrator (<small><?php echo $_SESSION['username']; ?></small>)
+  	Administrator (<small style="font-size:10px;"><?php echo $_SESSION['username']; ?></small>)
   </div>
   <div class="xPanelAdminSettingsWidget_link" onClick="window.open('admin.php?mod=Site/settings','_self');">
   	Settings

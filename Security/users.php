@@ -56,24 +56,32 @@ if(isset($_POST['remove'])){
             <th style="font-family:arial;font-size:14px;text-align:left;"><i><b>Delete:</b></i></th>
 		</tr>
 		<?php
-		$files = glob('People/users/*.xml');
+		$files = glob('Security/users/*.xml');
 		foreach($files as $file){
 			$xml = new SimpleXMLElement($file, 0, true);
 			echo '
 			<tr class="fileList" style="text-align:left;">
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/username&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. basename($file, '.xml') .'</span></td>
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/email&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->email .'</span></td>
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/group&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->group .'</span></td>
-				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=People/pw&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->password .'</span></td>
-				<td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=Security/username&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. basename($file, '.xml') .'</span></td>
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=Security/email&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->email .'</span></td>
+		
+				<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=Security/group&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->group .'</span></td>';
+				
+				if(basename($file, '.xml') == "super"){
+				echo '<td><small>Only "super" can change this password.</small></td>';} 
+				else {
+			    echo '<td class="userhover" style="font-family:arial;color:black;font-size:12px;" onClick="window.open(\'?mod=Security/pw&username='. basename($file, '.xml') .'\',\'_self\');"><span class="editableWithStaticLook">'. $xml->password .'</span></td>
+				'; };
+		echo '<td>';		
+				if($xml->delete == "allow"){
+				echo '
 					<form method="post" action="">
-					<input type="text" name="deleteAccount" value="People/users/'. basename($file) .'" style="display:none;">
+					<input type="text" name="deleteAccount" value="Security/users/'. basename($file) .'" style="display:none;">
 					<input class="specialBtn" type="submit" name="remove" value="Delete">
-					</form>
-				</td>
-			</tr>';
-		}
+					</form>';}else { echo 'n/a';}
+		};
 		?>
+        </td>
+	</tr>
 	</table>
         <small>super:hints, Edit any field of any user by simply clicking on it.</small>
 </body>

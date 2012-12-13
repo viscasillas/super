@@ -1,12 +1,6 @@
-
-
 <?php
 
-
-
 if (isset($_POST["ReconfigureBTN"])) {
-
-
 
 $string = '
 <?php 
@@ -97,7 +91,7 @@ header('Location: admin.php?mod=Site/settings','5');
 		$files = glob('Pages/pg/*.xml');
 			foreach($files as $file){
 			$getpages = new SimpleXMLElement($file, 0, true);
-			echo '<option value="'.$getpages->title.'">- '.$getpages->title.'</option>';}
+			echo '<option value="'.$getpages->docname.'">- '.$getpages->docname.'</option>';}
 	?>
     </select>
     
@@ -108,21 +102,26 @@ header('Location: admin.php?mod=Site/settings','5');
     <input name="siteFavicon" type="text" id="siteFavicon" value="<?php echo $siteFavicon;?>">
     
   </p>
-  
-
-  <p>
-    
-    <input type="submit" name="ReconfigureBTN" value="Save to 'Site/config.php'">
-    
-  </p>
     </div>
     <div class="TabbedPanelsContent">
      <p>
     Site Theme:
-    <input name="siteTheme" type="text" id="siteTheme" value="<?php echo $siteTheme;?>"> 
-    
-    
-    
+
+     <select name="siteTheme" id="siteTheme">
+      <option value="<?php echo $siteTheme;?>"><?php echo $siteTheme;?></option>
+		<?php
+        $hidden_files = array(".","..","config.php","headers.php","settings.php");
+        
+        if ($handle = opendir('Site')) {
+        while (false !== ($file = readdir($handle))) {
+        if (!in_array($file, $hidden_files)) {
+        echo '<option value='.$file.'>-'.$file.'</option>';
+        }
+        }
+        closedir($handle);
+        }
+        ?>
+        </select>
   </p>
     
     </div>
@@ -148,6 +147,7 @@ header('Location: admin.php?mod=Site/settings','5');
     <p><a href="admin.php?mod=System/backup">System / Download backup</a></p>
     </div>
   </div>
+  <input type="submit" name="ReconfigureBTN" value="Save to 'Site/config.php'">
 </div>
 </form>
 

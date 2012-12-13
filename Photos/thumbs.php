@@ -99,13 +99,31 @@
 <body>
 <script type="text/javascript" src="System/zeroclipboard/ZeroClipboard.js"></script>
 <?php
+
+  if(isset($_POST['makePageFromPhoto'])){
+	   $newtitleforphotowithimage = preg_replace('/[^A-Za-z]/', '', $_GET['img']);
+	   $xml = new SimpleXMLElement('<ls></ls>');
+	   $xml->addChild('permissions', 'full');
+	   $xml->addChild('content', '');
+	   $xml->addChild('title', 'img');
+  	   $xml->addChild('cpage', 'dpg');
+	   $xml->addChild('onmenu', 'yes');
+	   $xml->addChild('docname', $newtitleforphotowithimage);
+	   $xml->asXML('Pages/pg/' . $newtitleforphotowithimage . '.xml');
+	   $string = '<img src="'.$_GET['img'].'" width="100%">';
+		  $fp = fopen("Pages/dpg/".$newtitleforphotowithimage.".php", "w");
+		  fwrite($fp, $string);
+		  fclose($fp);
+	   header('Location: ?mod=Pages/pages');
+   }
+
 if(isset($_POST['deleteIMG'])){
 	unlink($_GET['img']);
 	header('Location: admin.php?mod=Photos/thumbs');
 }
 if(empty($_GET['img'])) 
     echo ""; 
-
+	
    else 
    echo "
    <div class='previewWindow'>
@@ -116,8 +134,7 @@ if(empty($_GET['img']))
    <img class='previewImage' src='".$_GET['img']."'/>
    <br />
    <input name='box-content' id='box-content' type='text' value='".$siteURL.$_GET['img']."'  class='imgURLbox'/>
-   <input type='button' id='copy' name='copy' value='Copy' class='copyBtn' />
-   </div>
+   <input type='button' id='copy' name='copy' value='Copy' class='copyBtn' /><form method='post'><input type='submit' name='makePageFromPhoto' value='Make Page' class='copyBtn'></form></div>
    " ;
 ?>
 <span style="font-family:arial;font-size:20px;color:#333;font-style:italic;">Photo Gallery</span><br><br>
