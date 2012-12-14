@@ -6,6 +6,13 @@ if(!file_exists('Security/users/' . $_SESSION['username'] . '.xml')){
 	die;
 }
 
+//logout a user when they try to get on admin panel and they are not an admin
+$userCheck = new SimpleXMLElement('Security/users/' . $_SESSION['username'] . '.xml', 0, true);
+if($userCheck->group == 'user'){
+	header('Location: ?mod=Security/logout');
+};
+			
+
 // generate api variables for modules to list their names and page
 $moduleName = $_GET['mod'];
 ?>
@@ -64,7 +71,7 @@ closedir($dh);
 </head>
 
 <body>
-<div class="jumprBrdr"></div>
+<!--<div class="jumprBrdr"></div>-->
 <div class="jumper" ondragstart="return false" onselectstart="return false">
 <?php
 
@@ -75,7 +82,11 @@ if  ($_GET['mod'] == "") {
     include($_GET['mod'].'.php');
 }
 ;?>
-<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">super:.(v0.9b)(000009b)<br /><small>by: <b>vivalavisca</b></small></div>
+<div class="xPanelStatusBar" onClick="window.open('?mod=System/chainlog/full','_self');">
+<?php
+$systemVersion = new SimpleXMLElement('System/switches/version.xml', 0, true);
+echo $systemVersion->version;
+?><br /><small>by: <b>vivalavisca</b></small></div>
 <div class="xPanelAdminSettingsWidget">
   <div class="xPanelAdminSettingsWidget_link">
   	Administrator (<small style="font-size:10px;"><?php echo $_SESSION['username']; ?></small>)
@@ -83,10 +94,14 @@ if  ($_GET['mod'] == "") {
   <div class="xPanelAdminSettingsWidget_link" onClick="window.open('admin.php?mod=Site/settings','_self');">
   	Settings
   </div>
+  
   <div class="xPanelAdminSettingsWidget_link" onClick="window.open('?mod=Security/changepassword','_self');">
   	Password
   </div>
-  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('?mod=Security/logout','_self');">
+  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('index.php','_new');">
+  	View Site
+  </div>
+  <div class="xPanelAdminSettingsWidget_link" onClick="window.open('admin.php?mod=Security/logout','_self');">
   	Logout
   </div>
 </div>

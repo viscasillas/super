@@ -44,7 +44,8 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
 //if true, good; if false, zip creation failed
 $result = create_zip(glob('Pages/pg/*'),'System/backups/pages.zip');
 $result = create_zip(glob('Pages/dpg/*'),'System/backups/pages-dpg.zip');
-$result = create_zip(glob('People/users/*'),'System/backups/users.zip');
+$result = create_zip(glob('Security/users/*'),'System/backups/users.zip');
+$result = create_zip(glob('Security/groups/*'),'System/backups/groups.zip');
 $result = create_zip(glob('Site/default/*'),'System/backups/site-template.zip');
 $result = create_zip(glob('Site/config.php'),'System/backups/site-config.zip');
 $result = create_zip(glob('Photos/images/*.jpg'),'System/backups/photos-images.zip');
@@ -55,6 +56,7 @@ $result = create_zip(glob('System/backups/*'),'System/backups/latest.zip');
 unlink('System/backups/pages.zip');
 unlink('System/backups/pages-dpg.zip');
 unlink('System/backups/users.zip');
+unlink('System/backups/groups.zip');
 unlink('System/backups/site-template.zip');
 unlink('System/backups/site-config.zip');
 unlink('System/backups/photos-images.zip');

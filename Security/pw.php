@@ -1,10 +1,10 @@
 <?php
 if(isset($_POST['change'])){
 	$new = md5($_POST['n_password']);
-	$xml = new SimpleXMLElement('People/users/' . $_GET['username'] . '.xml', 0, true);
+	$xml = new SimpleXMLElement('Security/users/' . $_GET['username'] . '.xml', 0, true);
 
 			$xml->password = $new;
-			$xml->asXML('People/users/' . $_GET['username'] . '.xml');
+			$xml->asXML('Security/users/' . $_GET['username'] . '.xml');
 			header('Location: admin.php?mod=Security/users');
 			die;
 

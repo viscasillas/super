@@ -47,8 +47,12 @@
 	z-index:20;
 	top:45px;
 	color:#4387CE;
+	background-color:white;
 	overflow:auto;
 	padding:30px;
+	-webkit-border-top-left-radius: 20px;
+-moz-border-radius-topleft: 20px;
+border-top-left-radius: 20px;
 }
 .jumprBrdr {
 	position:fixed;
@@ -60,7 +64,6 @@
 	z-index:600;
 }
 body {
-	background-color: #FFF;
 	width: 100%;
 	height: 100%;
 	padding: 0px;
@@ -68,6 +71,7 @@ body {
     -moz-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+	background-color:#333;
 }
 h3 {
 	font-family:arial;
@@ -102,8 +106,7 @@ a.mod:hover {
 	z-index: 10;
 	overflow: hidden;
 	height: 1000px;
-	background-color:#fff;
-	background-image:url(img/newmenubg.png);
+	background-color:#333;
 }
 
 .xPanelStatusBar {
@@ -132,7 +135,7 @@ a.mod:hover {
 }
 .xPanelAdminSettingsWidget:hover {
 	background-color: #222;
-	height: 175px;
+	height: 220px;
 	-webkit-border-bottom-left-radius: 20px;
 	-moz-border-radius-bottomleft: 20px;
 	border-bottom-left-radius: 20px;

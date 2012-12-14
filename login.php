@@ -6,10 +6,20 @@ if(isset($_POST['login'])){
 	if(file_exists('Security/users/' . $username . '.xml')){
 		$xml = new SimpleXMLElement('Security/users/' . $username . '.xml', 0, true);
 		if($password == $xml->password){
+			if($xml->group == "admin"){
 			session_start();
 			$_SESSION['username'] = $username;
+			// make currentUser file
+				$host = @gethostbyaddr($_SERVER["REMOTE_ADDR"]);
+		   		$make_currentUser = new SimpleXMLElement('<ls></ls>');
+				$make_currentUser->addChild('currentUser', $username);
+				$make_currentUser->addChild('host', $host);
+				$make_currentUser->asXML('Security/current/' . $host . '.xml');
 			header('Location: admin.php?mod=Pages/pages');
 			die;
+			}else{
+				header('Location: index.php');
+			}
 		}
 	}
 	$error = true;
@@ -44,18 +54,23 @@ if(isset($_POST['login'])){
      <link href="Security/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body ondragstart="return false" onselectstart="return false" style="background-color:#EEE;width:100%;height:100%;margin:0;padding:0;text-align:center; vertical-align:middle;overflow:hidden;">
-<div style="background-image:url(System/img/loginDlg.png);width:265px;height:300px;margin-right:auto;margin-left:auto;margin-top:100px;padding-top:25px;background-repeat:no-repeat;">
-	<img src="System/img/loginSign.png" />
-	<form method="post" action="">
-		<p><span style="font-family:ebrima; font-style:normal; font-size:13px; color:#0099ff;">Username:</span> <input type="text" name="username" size="20" style="padding-left:10px;background-repeat:no-repeat;width:212px;height:30px;background-image:url(System/img/txtInput.png);outline:none;border:none;" /></p>
-		<p><span style="font-family:ebrima; font-style:normal; font-size:13px; color:#0099ff;">Password:</span> <input type="password" name="password" size="20" style="padding-left:10px;background-repeat:no-repeat;width:212px;height:30px;background-image:url(System/img/txtInput.png);outline:none;border:none;" /></p>
-		<?php
+
+<?php
+$checkInstall = new SimpleXMLElement('System/switches/new_install.xml', 0, true);
+if($checkInstall->newInstall == "yes"){
+	include('System/welcome.php');
+} else { echo "
+<div style=background-image:url(System/img/loginDlg.png);width:265px;height:300px;margin-right:auto;margin-left:auto;margin-top:100px;padding-top:25px;background-repeat:no-repeat;>
+	<img src=System/img/loginSign.png />
+	<form method=post>
+		<p><span style=font-family:ebrima;font-style:normal;font-size:13px;color:#0099ff;>Username:</span> <input type=text name=username size=20 style=padding-left:10px;background-repeat:no-repeat;width:212px;height:30px;background-image:url(System/img/txtInput.png);outline:none;border:none;/></p>
+		<p><span style=font-family:ebrima;font-style:normal;font-size:13px;color:#0099ff;>Password:</span> <input type=password name=password size=20 style=padding-left:10px;background-repeat:no-repeat;width:212px;height:30px;background-image:url(System/img/txtInput.png);outline:none;border:none; /></p>";
 		if($error){
 			echo '<p style="color:#aaa;font-style:italic;">Invalid username and/or password</p>';
-		}
-		?>
-		<p><input type="submit" value="" name="login" style=" color:transparent; background-image:url(System/img/ok_75x25.png);width:75px;height:25px;border:none;" /></p>
-	</form>
-</div>
+		};
+		echo "
+		<p><input type=submit name=login style=color:transparent;background-image:url(System/img/ok_75x25.png);width:75px;height:25px;border:none; /></p>
+	</form></div>";
+	}?>
 </body>
 </html>
